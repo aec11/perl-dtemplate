@@ -1,6 +1,8 @@
 /*
  * dTemplate.xs
- * rewritten parse method
+ * parse method
+ *
+ * $URL$ $Id$
  *
  */
 
@@ -359,6 +361,7 @@ parse(...)
                 PUSHMARK(SP);
                 XPUSHs(parsevar);
 		        XPUSHs(sv_2mortal(newSVpvn(encoder_param, encoder_param_len)));
+                XPUSHs(self);
                 PUTBACK;
 
                 retvals = perl_call_sv(*encoder, G_SCALAR);

@@ -1,3 +1,7 @@
+#
+# $URL$ $Id$
+#
+
 package dTemplate;
 use strict;
 use DynaLoader;
@@ -7,7 +11,7 @@ use vars qw($VERSION @ISA %ENCODERS $ENCODERS %parse
 
 @ISA = qw(DynaLoader);
 
-$VERSION             = '2.4-pre1';
+$VERSION             = '2.4-pre2';
 $START_DELIMITER     = '\$';
 $END_DELIMITER       = '\$';
 $VAR_PATH_SEP        = '\.';
