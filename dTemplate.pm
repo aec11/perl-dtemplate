@@ -1,5 +1,7 @@
 #
-# $URL$ $Id$
+# $Id$
+# 
+# $URL$ 
 #
 
 package dTemplate;
