@@ -276,14 +276,19 @@ parse(...)
                     variable_path += len + 1;
                 }
 
-                dSP;
-                ENTER;
-                SAVETMPS;
-                PUSHMARK(SP);
-                XPUSHs(full_m);
-                XPUSHs(var_path_ref);
-                XPUSHs(self);
-                PUTBACK;
+                {
+
+                    dSP;
+                    ENTER;
+                    SAVETMPS;
+                    PUSHMARK(SP);
+                    XPUSHs(full_m);
+                    XPUSHs(var_path_ref);
+                    XPUSHs(self);
+                    PUTBACK;
+                    
+                }
+
 
                 retvals = perl_call_sv( parsevar, G_SCALAR );
 

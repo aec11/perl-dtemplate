@@ -7,7 +7,7 @@ use vars qw($VERSION @ISA %ENCODERS $ENCODERS %parse
 
 @ISA = qw(DynaLoader);
 
-$VERSION             = '2.3pre1';
+$VERSION             = '2.3';
 $START_DELIMITER     = '\$';
 $END_DELIMITER       = '\$';
 $VAR_PATH_SEP        = '\.';
