@@ -2,6 +2,10 @@ NAME
     dTemplate - A simple yet powerful template handling logic with advanced
     features.
 
+        $Id: dTemplate.pod 53 2003-08-14 21:14:48Z dlux $
+
+        $URL: http://svn.dlux.hu:81/public/dTemplate/trunk/dTemplate.pod $
+
 SYNOPSIS
         use dTemplate;
 
@@ -369,9 +373,8 @@ USAGE
 
         $variable*h*uc$
 
-    When an encoder is called, then the first parameter is the encodable
-    text, and the second parameter is the optional encoder parameter, which
-    can be provided in the placeholder, e.g:
+    An encoder can have one optional parameter, which can be provided in the
+    placeholder, e.g:
 
         $weight*eq/7*if/CHECKED$
 
@@ -402,6 +405,12 @@ USAGE
 
     will be substituted with an empty string, but if it is true, it is
     substituted to "000" (because the formatter is called).
+
+    The parameter-list of an encoder if it is called:
+
+      - The encodable text
+      - The (optional) encoder parameter
+      - The dTemplate::Template object in which the parsing is done
 
   Changing placeholder special characters
     You can change the placeholder parameters by changing (or localizing)
