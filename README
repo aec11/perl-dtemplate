@@ -29,10 +29,13 @@ SYNOPSIS
 
       # Changing placeholder special characters:
 
-      $dTemplate::START_DELIMITER   = '<%\s*';   # default: \$
-      $dTemplate::END_DELIMITER     = '\s*%>';   # default: \$
-      $dTemplate::PRINTF_SEP        = '\$';      # default: %+
-      $dTemplate::ENCODER_SEP       = '\@';      # default: \*
+      $dTemplate::START_DELIMITER     = '<%\s*'; # default: \$
+      $dTemplate::END_DELIMITER       = '\s*%>'; # default: \$
+      $dTemplate::VAR_PATH_SEP        = '\/';    # default: \.
+      $dTemplate::PRINTF_SEP          = '\$';    # default: %+
+      $dTemplate::ENCODER_SEP         = '\@';    # default: \*+
+      $dTemplate::ENCODER_PARAM_START = '\(';    # default: \/
+      $dTemplate::ENCODER_PARAM_END   = '\)';    # default:
   
       # Advanced feature: Styling
 
@@ -96,7 +99,7 @@ USAGE
 
     The full format of a placeholder is:
 
-      $Template_Variable%printf_style_format_string*encoder1*encoder2$
+      $Template_Variable%printf_style_format_string*encoder1/par1*encoder2/par2$
 
     Note: The special characters ($, % and *) can be changed, look below.
 
@@ -112,18 +115,41 @@ USAGE
         variable, for example when you parse a table. E.g: $MONEY%%%%%%011d$
         is a valid placeholder.
 
-    *encoder
+        This version can be used only before the encoders (because of
+        historical reasons) and if you need to use it other places in the
+        encoder chain, then you can use the "printf" encoder instead (see
+        below).
+
+        However you have a "printf" encoder since 2.2.2, this formatting
+        will be supported in the later versions because of the simple
+        syntax.
+
+    *encoder/par
         There are predefined encoders in the module, which can be used to
         format the input data. These are:
 
-          - u    : url-encoder
-          - h    : HTML-encoder (converts > to &gt;, etc)
-          - uc   : convert the string to uppercase
-          - lc   : convert the string to lowercase
+          - u          : url-encoder
+          - h          : HTML-encoder (converts > to &gt;, etc)
+          - ha         : Advanced HTML encoder (\n => <BR>, tabs => spaces)
+          - uc         : convert the string to uppercase
+          - lc         : convert the string to lowercase
+          - eq/par     : returns true if the encoded string is "par"
+          - if/par     : returns "par" if the encoded string is true
+          - printf/par : returns printf formatted data, where "par" is the format
+                         string
+
+        "/par" is an optional scalar parameter.
 
         You can use zero or more of these:
 
           $TITLE*uc*h$
+
+        or
+
+          $weight*eq/7*if/CHECKED$
+
+        (the last example returns CHECKED if the weight is equal to "7",
+        useful for radio-buttons or drop-down menus in HTML)
 
         Read more on encoders (and how to make new encoders) in the Encoders
         part.
@@ -192,7 +218,8 @@ USAGE
 
     The hash keys are the names, the values are subroutine references. These
     subs get the encodable data as the first parameter and returns the
-    encoded value.
+    encoded value. The second parameter is the optional parameter, which can
+    provided by the "/" separator after the encoder name.
 
   $dTemplate::parse{''}
     $dTemplate::parse{''} is a special hash key in the %dTemplate::parse
@@ -270,10 +297,13 @@ USAGE
     You can change the placeholder parameters by changing (or localizing)
     the following variables.
 
-      $dTemplate::START_DELIMITER   = '\$';
-      $dTemplate::END_DELIMITER     = '\$';
-      $dTemplate::PRINTF_SEP        = '%+';
-      $dTemplate::ENCODER_SEP       = '\*';
+      $dTemplate::START_DELIMITER     = '\$';
+      $dTemplate::END_DELIMITER       = '\$';
+      $dTemplate::VAR_PATH_SEP        = '\.';
+      $dTemplate::PRINTF_SEP          = '%+';
+      $dTemplate::ENCODER_SEP         = '\*';
+      $dTemplate::ENCODER_PARAM_START = '\/';
+      $dTemplate::ENCODER_PARAM_END   = '';
 
     If you change these variables, then these are used in the compilation of
     the following templates. Currently there is no supported way to

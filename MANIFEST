@@ -2,7 +2,9 @@ Changes
 MANIFEST
 Makefile.PL
 dTemplate.pm
+dTemplate.pod
 dTemplate.xs
+CompiledDataStruct.txt
 test.pl
 TODO
 README
