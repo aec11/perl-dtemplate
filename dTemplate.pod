@@ -399,9 +399,8 @@ is not the same as
 
     $variable*h*uc$
 
-When an encoder is called, then the first parameter is the encodable text,
-and the second parameter is the optional encoder parameter, which can be
-provided in the placeholder, e.g:
+An encoder can have one optional parameter, which can be provided in the
+placeholder, e.g:
 
     $weight*eq/7*if/CHECKED$
 
@@ -431,6 +430,12 @@ above, and if $dTemplate::NOTASSIGNED_MODE is false (by default), the
 
 will be substituted with an empty string, but if it is true, it is
 substituted to "000" (because the formatter is called).
+
+The parameter-list of an encoder if it is called:
+
+  - The encodable text
+  - The (optional) encoder parameter
+  - The dTemplate::Template object in which the parsing is done
 
 =head2 Changing placeholder special characters
 
