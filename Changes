@@ -1,0 +1,53 @@
+Revision history for Perl extension dTemplate.
+
+2.1.2 Mon Jul  9 15:39:12 CEST 2001
+	- Fixed "u" and "h" encoders with "0" input
+	- Fixed hash reference detection in the .xs code
+
+2.1.1 Mon Jun 11 14:27:50 CEST 2001
+	- dTemplate.xs was missing from the 2.1.0 distribution, fixed here
+	- Documentation about using magical hashes.
+	- added one test case
+
+2.1.0 Fri Jun  8 13:11:44 CEST 2001
+	- "parse" function is rewritten in C for efficiency ,it is now 10 
+	  times faster than the previous version
+	- rewritten "compile" method to provide the new "parse" structure
+	- $dTemplate::parse{''} added to handle unassigned variables
+	- added simple test cases
+
+2.0  Sun Mar  4 19:03:44 CET 2001
+	- Rewritten documentation
+	- Example added
+	- No more required HTML::Entities and URI::Escape when not needed
+	- $ENCODERS became %ENCODERS
+	- global parse parameter hash %dTemplate::parse added
+	- hash-structured parameter parsing added
+	- New dTemplate::Scalar object for possible memory-saving
+	- after compilation, we the original text is freed
+	- Possibility to suppress unassigned template variables
+1.0  Thu Oct 19 19:46:14 CEST 2000
+	- Added "lc" and "uc" encoder
+	- When I check for HASH reference, it is now done by UNIVERSAL::isa
+	- Lot of test has been done
+
+0.8  Sun Sep 24 23:17:24 CEST 2000
+	- constructor naming fixes: 
+	  "scalar dTemplate" -> "text dTemplate", 
+	  "select dTemplate" -> "choose dTemplate"
+	- you can call "text dTemplate" with either scalar ref or scalar
+	- we allow "." in the template placeholder name
+	- dTemplate::Style -> dTemplate::Choose
+	- Bugfixes in the style handling: now it's working in simple cases
+0.7  Thu Sep 14 00:08:43 CEST 2000
+	- new function: encode (wrapper for encoders)
+	- bugfix: 0 parsed as ""
+	- bugfix for multiple encoders: it's now tested and working
+
+0.6  Sun Aug 20 00:32:00 CEST 2000
+	- Bugfixes
+	- New feature: encoders
+
+0.5  Mon Jul 31 00:16:02 2000
+	- original version; created by h2xs 1.19
+

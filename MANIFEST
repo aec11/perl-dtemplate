@@ -1,0 +1,14 @@
+Changes
+MANIFEST
+Makefile.PL
+dTemplate.pm
+dTemplate.xs
+test.pl
+TODO
+README
+example/dtemplate.pl
+example/templates/page.htm
+example/templates/table_row.htm
+example/templates/table_cell.htm
+example/text/eng/table_title.txt
+example/text/hun/table_title.txt
