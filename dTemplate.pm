@@ -157,7 +157,7 @@ sub compile { my $s=shift;
             };
         };
         "";
-    }gxsce;
+    }gxse;
 
     # assigning ID-s for variables
 
