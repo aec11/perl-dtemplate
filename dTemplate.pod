@@ -1,6 +1,11 @@
 =head1 NAME
 
-dTemplate - A simple yet powerful template handling logic with advanced features.
+dTemplate - A simple yet powerful template handling logic with advanced
+features.
+
+    $Id$
+
+    $URL$
 
 =head1 SYNOPSIS
 
