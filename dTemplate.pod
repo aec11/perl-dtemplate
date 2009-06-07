@@ -773,7 +773,7 @@ and/or modify it under the same terms as Perl itself.
 
 =head1 AUTHOR
 
-dLux (Szabó, Balázs) <dlux@kapu.hu>
+dLux (Szabó, Balázs) <dlux@dlux.hu>
 
 =head1 SEE ALSO
 
