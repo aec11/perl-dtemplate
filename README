@@ -724,7 +724,7 @@ COPYRIGHT
     it and/or modify it under the same terms as Perl itself.
 
 AUTHOR
-    dLux (Szabó, Balázs) <dlux@dlux.hu>
+    dLux (Szabó, Balázs) <dlux@kapu.hu>
 
 SEE ALSO
     perl(1), HTML::Template, Text::Template, CGI::FastTemplate, Template.

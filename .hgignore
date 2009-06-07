@@ -1,3 +1,7 @@
 Makefile
 blib
 dTemplate.c
+webpage/download/
+webpage/.*tmp
+dTemplate.o
+dTemplate.bs

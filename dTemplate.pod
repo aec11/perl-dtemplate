@@ -3,9 +3,9 @@
 dTemplate - A simple yet powerful template handling logic with advanced
 features.
 
-    $Id$
+    $Id: dTemplate.pod 105 2004-07-24 12:08:22Z dlux $
 
-    $URL$
+    $URL: http://svn.dlux.hu/public/dTemplate/trunk/dTemplate.pod $
 
 =head1 SYNOPSIS
 

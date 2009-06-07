@@ -1,7 +1,7 @@
 #
-# $Id$
+# $Id: dTemplate.pm 134 2006-10-25 21:50:49Z dlux $
 # 
-# $URL$ 
+# $URL: http://svn.dlux.hu/public/dTemplate/trunk/dTemplate.pm $ 
 #
 
 package dTemplate;
@@ -13,7 +13,7 @@ use vars qw($VERSION @ISA %ENCODERS $ENCODERS %parse
 
 @ISA = qw(DynaLoader);
 
-$VERSION             = '2.4.1';
+$VERSION             = '2.5';
 $START_DELIMITER     = '\$';
 $END_DELIMITER       = '\$';
 $VAR_PATH_SEP        = '\.';
